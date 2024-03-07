@@ -1,0 +1,103 @@
+This is initial state state_test:
+---------------------------------
+  - state_variable = None
+
+FP> find_plan, verbose=3:
+    state = state_test
+    todo_list = [('method1',), ('method2',), ('method3',), ('method4',)]
+### 1709825921.0093997 - ('method1',)
+depth 0 todo_list [('method1',), ('method2',), ('method3',), ('method4',)]
+depth 0 task ('method1',) methods ['method1']
+depth 0 trying method1: 
+applicable
+depth 0 subtasks: [('action1',), ('action2',)]
+### 1709825926.0101328 - ('action1',)
+depth 1 todo_list [('action1',), ('action2',), ('method2',), ('method3',), ('method4',)]
+depth 1 action ('action1',): applied
+State state_test_copy_0:
+------------------------
+  - state_variable = action1
+
+### 1709825927.0120108 - ('action2',)
+depth 2 todo_list [('action2',), ('method2',), ('method3',), ('method4',), ('a',)]
+depth 2 action ('action2',): applied
+State state_test_copy_1:
+------------------------
+  - state_variable = action2
+
+### 1709825928.0133545 - ('method2',)
+depth 3 todo_list [('method2',), ('method3',), ('method4',), ('a',)]
+depth 3 task ('method2',) methods ['method2']
+depth 3 trying method2: 
+applicable
+depth 3 subtasks: [('action3',), ('action4',)]
+### 1709825933.0162683 - ('action3',)
+depth 4 todo_list [('action3',), ('action4',), ('method3',), ('method4',), ('a',)]
+depth 4 action ('action3',): applied
+State state_test_copy_2:
+------------------------
+  - state_variable = action3
+
+### 1709825934.0179465 - ('action4',)
+depth 5 todo_list [('action4',), ('method3',), ('method4',), ('a',)]
+depth 5 action ('action4',): applied
+State state_test_copy_3:
+------------------------
+  - state_variable = action4
+
+### 1709825935.0195587 - ('method3',)
+depth 6 todo_list [('method3',), ('method4',), ('a',)]
+depth 6 task ('method3',) methods ['method3']
+depth 6 trying method3: 
+applicable
+depth 6 subtasks: [('action5',), ('action6',), ('action7',)]
+### 1709825940.0240889 - ('action5',)
+depth 7 todo_list [('action5',), ('action6',), ('action7',), ('method4',), ('a',), ('task33',)]
+depth 7 action ('action5',): applied
+State state_test_copy_4:
+------------------------
+  - state_variable = action5
+
+### 1709825941.0254803 - ('action6',)
+depth 8 todo_list [('action6',), ('action7',), ('method4',), ('a',), ('task33',)]
+depth 8 action ('action6',): applied
+State state_test_copy_5:
+------------------------
+  - state_variable = action6
+
+### 1709825942.0270157 - ('action7',)
+depth 9 todo_list [('action7',), ('method4',), ('a',), ('task33',)]
+depth 9 action ('action7',): applied
+State state_test_copy_6:
+------------------------
+  - state_variable = action7
+
+### 1709825943.0282085 - ('method4',)
+depth 10 todo_list [('method4',), ('a',), ('task33',)]
+depth 10 task ('method4',) methods ['method4']
+depth 10 trying method4: 
+applicable
+depth 10 subtasks: [('action8',), ('action9',), ('action10',)]
+### 1709825948.0306332 - ('action8',)
+depth 11 todo_list [('action8',), ('action9',), ('action10',), ('a',), ('task33',), ('task33',)]
+depth 11 action ('action8',): applied
+State state_test_copy_7:
+------------------------
+  - state_variable = action8
+
+### 1709825949.0323002 - ('action9',)
+depth 12 todo_list [('action9',), ('action10',), ('a',), ('task33',), ('task33',)]
+depth 12 action ('action9',): applied
+State state_test_copy_8:
+------------------------
+  - state_variable = action9
+
+### 1709825950.0339553 - ('action10',)
+depth 13 todo_list [('action10',), ('a',), ('task33',), ('task33',)]
+depth 13 action ('action10',): applied
+State state_test_copy_9:
+------------------------
+  - state_variable = action10
+
+### 1709825951.035529 - ('a',)
+depth 14 todo_list [('a',), ('task33',), ('task33',)]
